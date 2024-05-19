@@ -22,11 +22,10 @@
     # Copy built assets and dependencies from frontend-builder stage
     COPY --from=client /app .
     
-    # Copy the .env.sample file to .env.local
-    COPY .env.docker .env.local
     
-    # Expose port 5173 for the Node.js application
-    EXPOSE 5173
+    
+    # Expose port 3000 for the Node.js application
+    EXPOSE 3000
     
     # Define the default command to run the application in development mode
     CMD ["npm", "start"]
