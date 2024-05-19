@@ -4,7 +4,7 @@ services:
     container_name: mongo
     image: mongo:latest
     volumes:
-      - ./backend/utils:/data
+      - ./backend/utils:/utils
     ports:
       - "27017:27017"
 
@@ -18,17 +18,16 @@ services:
     depends_on:
       - mongodb
 
-  frontend:
+       frontend:
     container_name: client
     build: ./client
     ports:
       - "3000:3000"
-      environment:
+    environment:
       REACT_APP_PROXY: http://backend:5000
       depends_on:
       - backend
 
 
-
 volumes:
-  data:
+  utils:
