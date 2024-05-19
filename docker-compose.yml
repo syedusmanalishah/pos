@@ -21,10 +21,13 @@ services:
   frontend:
     container_name: client
     build: ./client
-    env_file:
-      - ./client/.env.docker
     ports:
-      - "5173:5173"
+      - "3000:3000"
+    environment:
+      REACT_APP_PROXY: http://backend:5000
+    depends_on:
+       - backend
+
 
   redis:
     container_name: redis
