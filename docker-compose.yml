@@ -24,16 +24,13 @@ services:
     env_file:
       - ./client/.env.docker
     ports:
-      - "5173:5173"
+      - "3000:3000"
+      environment:
+      REACT_APP_PROXY: http://backend:5000
+      depends_on:
+      - backend
 
-  redis:
-    container_name: redis
-    restart: unless-stopped
-    image: redis:7.0.5-alpine 
-    expose:
-        - 6379
-    depends_on:
-      - mongodb
+
 
 volumes:
   data:
