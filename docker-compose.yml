@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  mongodb:
+  mongodbp:
     container_name: mongop
     image: mongo:latest
     volumes:
@@ -16,7 +16,7 @@ services:
     ports:
       - "5000:5000"
     depends_on:
-      - mongodb
+      - mongodbp
 
   frontend:
     container_name: client
@@ -27,16 +27,6 @@ services:
       REACT_APP_PROXY: http://backend:5000
     depends_on:
        - backend
-
-
-  redis:
-    container_name: redisp
-    restart: unless-stopped
-    image: redis:7.0.5-alpine 
-    expose:
-        - 6379
-    depends_on:
-      - mongodb
 
 volumes:
   data:
