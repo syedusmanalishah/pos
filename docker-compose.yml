@@ -21,8 +21,6 @@ services:
   frontend:
     container_name: client
     build: ./client
-    env_file:
-      - ./client/.env.docker
     ports:
       - "3000:3000"
       environment:
