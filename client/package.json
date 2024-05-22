@@ -1,5 +1,5 @@
 {
-  "proxy": "http://34.198.122.30/:5000",
+  "proxy": "http://34.198.122.30:5000",
   "name": "client",
   "version": "0.1.0",
   "private": true,
