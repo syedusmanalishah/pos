@@ -24,7 +24,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      REACT_APP_PROXY: http://backend:5000
+      REACT_APP_PROXY: http://34.198.122.30:5000
     depends_on:
        - backend
 
