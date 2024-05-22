@@ -1,7 +1,7 @@
 version: "3.8"
 services:
-  mongodbp:
-    container_name: mongop
+  mongodb:
+    container_name: mongo
     image: mongo:latest
     volumes:
       - ./backend/data:/data
@@ -9,14 +9,14 @@ services:
       - "27017:27017"
 
   backend:
-    container_name: backendp
+    container_name: backend
     build: ./backend
     env_file:
       - ./backend/.env.docker
     ports:
       - "5000:5000"
     depends_on:
-      - mongodbp
+      - mongodb
 
   frontend:
     container_name: client
