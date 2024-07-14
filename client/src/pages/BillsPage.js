@@ -90,8 +90,8 @@ const BillsPage = () => {
             <center id="top">
               <div className="logo" />
               <div className="info">
-                <h2>Techinfo YT POS</h2>
-                <p> Contact : 123456 | Mumbai Maharashtra</p>
+                <h2>Syed Soft</h2>
+                <p> Contact : 03485280347| Developed by syed usman</p>
               </div>
               {/*End Info*/}
             </center>
@@ -156,7 +156,7 @@ const BillsPage = () => {
                         <h2>tax</h2>
                       </td>
                       <td className="payment">
-                        <h2>${selectedBill.tax}</h2>
+                        <h2>PKR {selectedBill.tax}</h2>
                       </td>
                     </tr>
                     <tr className="tabletitle">
@@ -167,7 +167,7 @@ const BillsPage = () => {
                       </td>
                       <td className="payment">
                         <h2>
-                          <b>${selectedBill.totalAmount}</b>
+                          <b>PKR {selectedBill.totalAmount}</b>
                         </h2>
                       </td>
                     </tr>
